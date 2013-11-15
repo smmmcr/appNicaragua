@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">		 
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>App Paiz</title>
+		<link rel="stylesheet" href="themes/mxm.css" />
+		<link rel="stylesheet" href="jquery.mobile.structure-1.3.1.css" />		
+		<link rel="stylesheet" media="screen and (max-width: 399px)" href="style320.css" /> 
+		<link rel="stylesheet" media="screen and (min-width: 400px)" href="style400.css" />
+		<link rel="stylesheet" media="screen and (min-width: 600px)" href="style600.css" />
+		<link rel="stylesheet"  media="screen and (min-width: 700px)" href="style700.css" />
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script src="jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="iscroll.js"></script>
+		<script src="funciones.js"></script>
+		<script src="jquery.mobile-1.3.1.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	</head>
+	<body>	
+		<div id='home' data-role="page" data-theme="a" >
+				<div  id="cargaimg">
+				<img src='logoApp.png' alt="imagen de carga"/>
+				</div>
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png" alt="logo" />
+			</div>
+			<div data-role="content">
+				<div id="menuP" >				
+					<div id="scrollMenu" >
+						<ul>
+						<li id="etapa1" >
+								<div class="ui-grid-a">
+									<div class="ui-block-a"><a href="#guia"><img src='img/btnGuiaCompra.png'></a></div>
+									<div class="ui-block-b"><a href="#miercoles"><img src='img/btnMiercoles.png'></a></div>									
+								</div>
+								<div class="ui-grid-a">
+									<div class="ui-block-a"><a href="#supermercados"><img src='img/btnsucursales.png'></a></div>
+									<div class="ui-block-b"><a href="#contacto"><img src='img/btncontactanos.png'></a></div>									
+								</div><!-- /grid-b -->
+								<div class="ui-grid-a">
+									<div class="ui-block-a"><a href="#recetas"><img src='img/btnrecetas.png'></a></div>
+																								
+								</div>
+						</li>										
+						</ul>
+					</div>				
+				</div>				
+			</div>
+		<!--<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false"></div>-->
+		</div>
+		<div id='guia' data-role="page" data-theme="a" data-iscroll="enable">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+				<a  href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Guía de compras</h3>
+				</div>
+			<div data-role="content" id="guiaconten" data-iscroll="enable" class="contenidoGeneral">	
+				<div id="wrapper_guia">
+					<div id="scroller">
+						<ul id="thelist">					
+							<!--<li><img src="imgProductos/p1.png" alt="imagen producto 1"></li>
+							<li><img src="imgProductos/p2.png" alt="imagen producto 2"></li>
+							<li><img src="imgProductos/p5.png" alt="imagen producto 5"></li>-->
+						</ul>
+					</div>			
+				</div>
+			
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
+		<div id='miercoles' data-role="page" data-theme="a" data-iscroll="enable">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+		<a   href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Miércoles Frescos</h3>
+				</div>
+			<div data-role="content"  id="miercolesFrescos" data-iscroll="enable" class="contenidoGeneral">	
+				<div id="wrapper_miercoles">
+					<div id="scroller">
+						<ul id="thelist">					
+							<!--<li><img src="imgProductos/p3.png" alt="imagen producto 3"></li>
+							<li><img src="imgProductos/p4.png" alt="imagen producto 4"></li>-->
+						</ul>
+					</div>
+				</div>			
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
+		<div id='recetas' data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+			<div class="headerGuia" data-position="inline">
+				<a  href="#home"  data-iconpos="left" class="retro"><img src="img/retro.png"></a><h3>Recetas</h3>
+			</div>
+			<div data-role="content"  class="contenidoGeneral">				
+				<div id="listaRecetas">
+					<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorías..." data-inset="true">
+
+					</ul>
+				</div>
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
+		<div id='listaRecetas' data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+			<div class="headerGuia" data-position="inline">
+				<a  href="#" data-rel="back" data-iconpos="left"><img src="img/retro.png"></a><h2>Recetas</h2>
+			</div>			
+			<div data-role="content" >	
+				<div id="listaRecetasXcatCon" style="width: 100%;position: relative;">
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorias..." data-inset="true">
+					
+				</ul>
+				</div>			
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
+		<div id='recetaSelec' data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+			<div class="headerGuia" data-position="inline">
+				<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h3>Recetas</h3>
+			</div>
+			<div data-role="content">				
+				<div id="recetafinal">
+					<div id="tituloreceta"></div>
+					<div id="contenidoreceta">
+					<div id="scroller">
+						<ul data-role="listview"    data-inset="true" id="scrolle1" data-corners="false">
+						
+						</ul>
+					</div>
+					</div>
+				</div>
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
+		<div id='supermercados' data-role="page" data-theme="a" class="contenidoGeneral">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+			<a   href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
+				</div>	
+			<div data-role="content">
+				<div id='sliderSuper'>
+				<img src="imagenesSuper/super1.png" alt="SUPERUNO 1">
+				</div>
+				<div id='selectores'>
+					<select name="select1" id="select1" data-mini="true">
+							<option value="" >Departamento</option>
+							<option value="1">Guatemala</option>
+							<option value="2">Quetzaltenango</option>
+							<option value="3">Huehuetenango</option>
+							<option value="4">Suchitepequez</option>
+							<option value="5">Escuintla</option>
+							<option value="6">Chiquimula</option>
+							<option value="7">Coban</option>
+					</select>
+					<select name="select2" id="select2" data-mini="true">
+					<option value="" disabled>Canton</option>
+					</select>
+					<select name="select3" id="select3" data-mini="true">
+					<option value="">Seleccione Distrito</option>
+					</select>
+				</div>
+			</div>
+			
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
+		<div id='contacto' data-role="page" data-theme="a" >
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+			<a  href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a></a>	<h2>Contáctenos</h2>
+				</div>	
+			<div data-role="content" class="contenidoGeneral">				
+				<a href='#busquedaRapidaContacto' data-role="button" data-theme="a" >Búsqueda rápida por supermercado</a>			
+					<div id='btnsgeneralLlama'>
+					<a href=''  data-role="button" data-theme="a">SAC Servicio al cliente    800 - 8000 - 722</a>
+					<a href="tel:+5068008000722"><img src='img/btnllamar.png' alt='llamar'/></a>
+					<a href='' data-role="button" data-theme="a">Servicio a domicilio Megacentro (502)2485-9635</a>
+					<a href="tel:+50624859635"><img src='img/btnllamar.png' alt='llamar'/></a>
+					<a href='' data-role="button" data-theme="a">Servicio a domicilio Megacentro (502)2485-9635</a>
+					<a href="tel:+50624859635"><img src='img/btnllamar.png' alt='llamar'/></a>
+					</div>
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
+		<div id='busquedaRapidaContacto' data-role="page" data-theme="a" class="contenidoGeneral">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a><h2>Contáctenos</h2>
+				</div>	
+			<div data-role="content"  >	
+				<div id="contenidoulbusqueda">
+				<div id="scroller">
+				<ul data-role="listview" data-inset="true" data-theme="a" data-filter="true" data-filter-placeholder="Filtrar Supermercados..." id="scrollercontacto" data-corners="false">
+					<li id="261">
+						<h3 class="h3tel">Pradera</h3>
+						<p class="ptel"><a href="tel:+50224859675">(502)2485-9675</a></p>
+					</li>
+					<li id="264">
+						<h3 class="h3tel">San Cristobal</h3>
+						<p class="ptel"><a href="tel:+5024859615">(502)2485-9615</a></p>
+					</li>
+					<li id="265">
+						<h3 class="h3tel">Montufar</h3>
+						<p class="ptel"><a href="tel:+5024859512">(502)2485-9512</a>o<a href="tel:+5024859525">(502) 24859525</a></p>
+					</li>
+					<li id="267">
+						<h3 class="h3tel">Novicentro</h3>
+						<p class="ptel"><a href="tel:+50224859555">(502)2485-9555</a>o<a href="tel:+50224859557">(502)24859557</a></p>
+					</li>
+					<li id="270">
+						<h3 class="h3tel">Megacentro</h3>
+						<p class="ptel"><a href="tel:+50224859645">(502)2485-9645</a>o<a href="tel:+50224859631">(502)2485-9631</a>o<a href="tel:+50224859632">(502)2485-9632</a>o
+						<a href="tel:+50224859635">(Express)(502)2485-9635</a></p>
+					</li>
+					<li id="271">
+						<h3 class="h3tel">Asunción</h3>
+						<p class="ptel"><a href="tel:+50224859565">(502)2485-9565</a>o<a href="tel:+50224859570"> (Express)(502)2485-9570</a></p>
+					</li>
+					<li id="272">
+						<h3 class="h3tel">Salida al Pacifico</h3>
+						<p class="ptel"><a href="tel:+50224859882">(502)2485-9882</a></p>
+					</li>
+					<li id="273">
+						<h3 class="h3tel">Megaseis</h3>
+						<p class="ptel"><a href="tel:+5022485965">(502)2485-9655</a></p>
+					</li>
+					<li id="274">
+						<h3 class="h3tel">Petapa</h3>
+						<p class="ptel"><a href="tel:+50224859625">(502)2485-9625</a></p>
+					</li>
+					<li id="275">
+						<h3 class="h3tel">Utatlan</h3>
+						<p class="ptel"><a href="tel:+50224859500">(502)2485-9500</a>o<a href="tel:+50224859502">(502)2485-9502</a>o<a href="tel:+50224859610">(Express)(502)2485-9610</a></p>
+					</li>
+					<li id="276">
+						<h3 class="h3tel">Montserrat</h3>
+						<p class="ptel"><a href="tel:+50224859715">(502)2485-9715</a>o<a href="tel:+50224859710">(Express)(502)2485-9710</a></p>
+					</li>
+					<li id="277">
+						<h3 class="h3tel">Parroquia</h3>
+						<p class="ptel"><a href="tel:+50224859575">(502)2485-9575</a>o<a href="tel:+50224859577">(Express)(502)2485-9577</a></p>
+					</li>
+					<li id="278">
+						<h3 class="h3tel">18 Calle</h3>
+						<p class="ptel"><a href="tel:+50224859695">(502)2485-9695</a></p>
+					</li>
+					<li id="279">
+						<h3 class="h3tel">Aguilar Batres</h3>
+						<p class="ptel"><a href="tel:+50224859525">(502)2485-9525</a></p>
+					</li>
+					<li id="282">
+						<h3 class="h3tel">El Naranjo</h3>
+						<p class="ptel"><a href="tel:+50224196161">(502)2419-6161</a>o
+						<a href="tel:+50224196162">(502)2419-6162</a>o
+						<a href="tel:+50224196262">(Express)(502)24196262</a></p>
+					</li>
+					<li id="283">
+						<h3 class="h3tel">Montblac</h3>
+						<p class="ptel"><a href="tel:+50277654895">(502)7765-4895</a></p>
+					</li>
+					<li id="284">
+						<h3 class="h3tel">Huehuetenango</h3>
+						<p class="ptel"><a href="tel:+50277682340">(502)7768-2340</a>o
+						<a href="tel:+50277640375">(502)7764-0375 </a>o
+						<a href="tel:+50277640376">(502)7764-0376</a>o
+						<a href="tel:+50277682345">(502)7768-2345</a></p>
+					</li>
+					<li id="285">
+						<h3 class="h3tel">Mazatenango</h3>
+						<p class="ptel"><a href="tel:+50278722108">(502)7872-2108</a>o
+						<a href="tel:+50278720699">(Express)(502)7872-0699</a></p>
+					</li>
+					<li id="286">
+						<h3 class="h3tel">Costa Grande</h3>
+						<p class="ptel"><a href="tel:+50278897209">(502)7889-7209</a>o
+						<a href="tel:+50278893087">(502)7889-3087</a></p>
+					</li>
+					<li id="289">
+						<h3 class="h3tel">Chiquimula</h3>
+						<p class="ptel"><a href="tel:+50279426235">(502)7942-6235</a></p>
+					</li>
+					<li id="290">
+						<h3 class="h3tel">Cóban</h3>
+						<p class="ptel"><a href="tel:+50279514554">(502)7951-4554</a>o<a href="tel:+50279514554">(Express)(502)7951-4554</a> Servicio al Cliente
+						<a href="tel:+50279514550">(502)7951-4550</a><a href="tel:+5021951-4547">(502)1951-4547</a></p>
+					</li>
+					<li class="clear"></li>
+				</ul>
+				</div>
+				</div>			
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
+		<div id='mostrarmapa' data-role="page" data-theme="a" id="mapas" >
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png" />
+			</div>
+				<div class="headerGuia" data-position="inline">
+				<a  href="#supermercados" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
+				</div>	
+			<div data-role="content" >
+				<div id="contenidosuper">
+					<div id="listatiendas">
+						<ul id="tiendas2" data-role="listview"></ul>
+					</div>
+					<div id='map_canvas'></div>						
+					<ul id="tiendasinfo" data-role="listview" >								
+					<li id="coninfosuper" data-theme="a" >Información
+						<ul data-role="listview" data-theme="a" id="otro">
+						<li id="direccion" class="ui-li ui-li-static ui-btn-up-a ui-first-child"></li>
+						<li id="horario" class="ui-li ui-li-static ui-btn-up-a"></li>
+						<li id="telefono" class="ui-li ui-li-static ui-btn-up-a"></li>
+						<li id="servicios" class="ui-li ui-li-static ui-btn-up-a ui-last-child"></li>
+							<li ><a href="#mostrarmapa"  data-iconpos="left">Regresar</a></li>
+						</ul>
+					</li>					
+					</ul>				
+				</div>
+			</div>
+			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+			</div>
+		</div>
+	</body>
+	<script>
+$( "#recetas" ).on( "pagebeforeshow", function( event ) {
+	obtenerCatRecetas();
+	//mostrarlista(14);
+});
+$( "#recetaSelec" ).on( "pagebeforeshow", function( event ) {
+footer=$(".footer").height();
+ventana=$(window).height();
+$("#recetaSelec #recetafinal").css("height",(ventana)-(footer+(ventana/3)));
+altoreceta=$("#recetafinal").height();
+/*altoimg=$("#recetafinal img").height();*/
+altoreg=$("#regresar").height();
+altotit=$("#titulorec1").height();
+//alert(altotit*2);
+$("#recetaSelec #contenidoreceta").css("height",altoreceta);
+	setTimeout( function() {
+		myScroll3 = new iScroll('contenidoreceta', {hScrollbar: false});
+	}, 900);	
+});
+/*--------------------------Guia-----------------------------------------------------------*/
+$( "#guia" ).on( "pagebeforeshow", function( event ) {
+
+ obtenerGuia();
+ /*setTimeout( function() {
+ alert($( "#guia .headerGuia" ).css("width"));
+ 	}, 500);*/
+});
+/*-------------------------Miercoles Frescos----------------------------------------------*/
+$( "#miercoles" ).on( "pagebeforeshow", function( event ) {
+obtenerMiercoles();
+});
+/*------------------------------Contacto-------------------------------------------------*/
+$( "#busquedaRapidaContacto" ).on( "pagebeforeshow", function( event ) {
+footer=$(".footer").height();
+ventana=$(window).height();
+$("#busquedaRapidaContacto #contenidoulbusqueda").css("height",(ventana)-(footer+(ventana/3)));
+	setTimeout( function() {
+		myScroll3 = new iScroll('contenidoulbusqueda', {hScrollbar: false});
+	}, 500);
+});		
+$("#recetaSelec,#glutenPasos,#recetaSelecsugar,#listaRecetas ul,#recetafinal").on( "pagebeforehide", function( event ) {
+myScroll3.destroy();
+myScroll3 = null;
+});
+/*---------------------------------------guia-------------------------------*/
+$("#guia").on('pagecreate', function(){
+ $.fn.disableSelection = function() {
+        return this
+                 .attr('unselectable', 'on')
+                 .css('user-select', 'none')
+                 .on('selectstart', false);
+    };		
+});
+/*---------------------------------ubiacnos-------------------------*/
+$("#supermercados").on( "pagebeforeshow", function( event ) {
+	$("#select1").bind( "change", function() {
+		idcat=$('#select1').val();
+		mostrarcanton(idcat);	
+		$('#select2').selectmenu('refresh', true);
+	});
+	$("#select2").bind( "change", function() {
+		idcat=$("#select2").val();
+		mostrarTienda(idcat);	
+		$('#select3').selectmenu('refresh', true);		
+	});
+	$("#select3").bind( "change", function() {
+		idcat=$("#select3").val();
+		
+		mostrarcontenidomapa(idcat);
+
+	});
+});
+
+$("#scrollerinfo").on("pagebeforeshow",function () {
+setTimeout( function() {
+	myScroll3 = new iScroll('scrollerinfo', {hScrollbar: false});
+}, 0);
+setTimeout( function() {
+	myScroll3.refresh();
+}, 0);
+});
+$("#mostrarmapa").on("pagebeforeshow",function () {
+	idfinal=tiendas;
+		$.ajax({
+		type: "GET",
+		url: "tiendas.xml",
+		dataType: "xml",
+		success: function(xml) {
+	
+				$('#load').fadeOut();
+				$(xml).find("informacion").each(function () {	
+				$.each(this.attributes, function(i, attrib){
+				itemId = attrib.value;
+				});
+				if(itemId==idfinal){
+			
+				lat=$(this).find("lat").text();
+				longi=$(this).find("longi").text();
+				nombre=$(this).find("nombre").text();
+				direccion=$(this).find("direccion").text();
+				telefono=$(this).find("telefono").text();
+				horario=$(this).find("horario").text();	
+				imagenes =$(this).find("imagenes").text();
+				 $("#listatiendas ul").empty();
+				 $("#listatiendas ul").append('<li ><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\',\''+imagenes+'\')" >'+nombre+ '</a></li>');
+				 //$("#listatiendas ul").append('<li style="width: 166px;float: left;" ><a href="waze://?ll='+lat+','+longi+'&z=10&navigate=yes" >Ubicar '+nombre+ ' en Waze</a></li>');
+				 $("#listatiendas ul").append('<li  class="weze" ><a href="waze://?ll='+lat+','+longi+'&z=10&navigate=yes" ><img src="img/wezeico.png" alt="Ubicar en weze" /></a></li>');
+				
+				}
+					
+				});
+				 setTimeout( function() {
+					 visulamapainfo(lat,longi,nombre,direccion,horario,telefono,imagenes);	
+					 }, 600);
+					$("#tiendas2").listview('refresh');	
+				}
+		});
+});
+function id(){
+alert("dd");
+
+}
+	</script>
+</html>
